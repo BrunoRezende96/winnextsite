@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Metal&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .DPad {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@layer utilities{
+  .fontMetal {
+    font-family: 'Metal', sans-serif;
+  } 
+}
+
+
+@layer components {
+  .backgroundImageMobile {
+    background-image: url('mobile1.png');
+  }
+}
