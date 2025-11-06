@@ -1,8 +1,20 @@
-import PrimaryButton from "./primaryButton"
+import { useEffect, useState } from "react"
+import WinnextButton from "./winnextButton"
+
 
 
 
 export default function DesktopSliderComponents() {
+
+
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
 
 
     const components = [
@@ -16,7 +28,7 @@ export default function DesktopSliderComponents() {
                     </h1>
 
                     <div className="p-DPad bottom-[35%] absolute left-0">
-                        <PrimaryButton />
+                        <WinnextButton buttonType={width > 1505 ? "large" : "small"}/>
                     </div>
 
                 </div>
@@ -32,7 +44,7 @@ export default function DesktopSliderComponents() {
                     </h1>
 
                     <div className="p-DPad bottom-[35%] absolute right-0">
-                        <PrimaryButton />
+                        <WinnextButton buttonType={width > 1505 ? "large" : "small"}/>
                     </div>
 
                 </div>
@@ -48,7 +60,7 @@ export default function DesktopSliderComponents() {
                     </h1>
 
                     <div className="p-DPad top-[30%] absolute">
-                        <PrimaryButton />
+                        <WinnextButton buttonType={width > 1505 ? "large" : "small"}/>
                     </div>
 
                 </div>

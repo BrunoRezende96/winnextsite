@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import MobileSliderComponents from "./mibileSliderComponents";
 import PrimaryButton from "./primaryButton";
 
@@ -15,6 +15,10 @@ export default function MobileSlider() {
     ];
 
 
+    useEffect(() => {
+        const interval = setInterval(proximoSlide, 5000);
+        return () => clearInterval(interval);
+    });
 
     function proximoSlide() {
         setIndice((slide) => (slide + 1) % slides.length);
@@ -37,7 +41,7 @@ export default function MobileSlider() {
                 
                     {MobileSliderComponents()[indice].title}
 
-                    <div className="w-full flex justify-center mb-6 z-50 mt-2 top-56 absolute" >
+                    <div className="w-full flex justify-center mb-6 mt-2 top-56 absolute" >
                         <PrimaryButton />
                     </div>
                 
