@@ -7,6 +7,7 @@ export default {
   theme: {
 
     extend: {
+
       colors: {
         bgPrimary: '#0098c0',
         bgSecundary: '#31c684',
@@ -15,6 +16,10 @@ export default {
 
       padding:{
         'DPad': '2rem',
+      },
+
+      screens: {
+        mid: { min: "450px", max: "700px" },   // seu breakpoint personalizado
       },
 
     },

@@ -1,57 +1,65 @@
 import { useState, useEffect } from "react";
 import MobileSliderComponents from "./mibileSliderComponents";
-import PrimaryButton from "./primaryButton";
-
-
+import WinnextButton from "./winnextButton";
 
 export default function MobileSlider() {
+  const [indice, setIndice] = useState(0);
+  const [fade, setFade] = useState(true);
 
-    const [indice, setIndice] = useState(0);
+  const slides = [
+    { mobile: "mobile1.png" },
+    { mobile: "mobile2.png" },
+    { mobile: "mobile3.png" },
+  ];
 
-    const slides = [
-        { mobile: "mobile1.png" },
-        { mobile: "mobile2.png" },
-        { mobile: "mobile3.png" },
-    ];
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // inicia fade-out
+      setFade(false);
 
-
-    useEffect(() => {
-        const interval = setInterval(proximoSlide, 5000);
-        return () => clearInterval(interval);
-    });
-
-    function proximoSlide() {
+      setTimeout(() => {
         setIndice((slide) => (slide + 1) % slides.length);
-    }
+        setFade(true); // fade-in
+      }, 2500);
+    }, 15000);
 
-    function slideAnterior() {
-        setIndice((slide) => ((slide - 1 + slides.length) % slides.length));
-    }
+    return () => clearInterval(interval);
+  }, [slides.length]);
 
-    const currentImage = slides[indice].mobile;
-
-    return (
-        <div className="flex  w-full items-center justify-center flex-col relative" >
-            <div className=" w-full bg-lime-600 relative flex gap-3 flex-col items-center " >
-                <img
-                    className="object-cover w-full h-auto absolute"
-                    src={currentImage}
-                    alt={`Slide ${indice + 1}`}                    
-                    />
-                
-                    {MobileSliderComponents()[indice].title}
-
-                    <div className="w-full flex justify-center mb-6 mt-2 top-56 absolute" >
-                        <PrimaryButton />
-                    </div>
-                
-            </div>
-                <div className="flex top-0 absolute gap-3 w-full justify-center" >
-                    <button onClick={slideAnterior}>Previous</button>
-                    <button onClick={proximoSlide}>Next</button>
-                </div>
+  return (
+    <div className="flex w-full items-center justify-center flex-col relative">
+      {/* Container principal */}
+      <div className="w-full relative flex flex-col items-center overflow-hidden">
+        
+        {/* Imagens com fade */}
+        <div className="relative w-full min-h-[500px]">
+          {slides.map((slide, index) => (
+            <img
+              key={index}
+              src={slide.mobile}
+              alt={`Slide ${index + 1}`}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2500ms] ease-in-out ${
+                index === indice ? "opacity-100" : "opacity-0"
+              }`}
+            />
+          ))}
         </div>
-    );
 
+        {/* Texto com fade sincronizado */}
+        <div
+          style={{ transitionDuration: "2500ms" }}
+          className={`container flex transition-opacity ease-in-out ${
+            fade ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {MobileSliderComponents()[indice].title}
+        </div>
 
+        {/* Botão com fade sincronizado */}
+        <div className="absolute bottom-72 w-full flex justify-center">
+          <WinnextButton buttonType="XS" fade={fade} />
+        </div>
+      </div>
+    </div>
+  );
 }

@@ -11,11 +11,13 @@
   }
 }
 
-@layer utilities{
+@layer utilities {
   .fontMetal {
     font-family: 'Metal', sans-serif;
-  } 
+  }
 }
+
+
 
 
 @layer components {
@@ -23,3 +25,7 @@
     background-image: url('mobile1.png');
   }
 }
+
+
+
+
