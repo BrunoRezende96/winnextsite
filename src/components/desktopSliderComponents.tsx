@@ -11,7 +11,7 @@ export default function DesktopSliderComponents() {
         {
             title:
                 <div id="title"
-                    className=" container p-DPad relative flex flex-col h-[800px]
+                    className=" container p-DPad relative flex flex-col h-screen
                     
                     xl:relative
                     xl:top-16
