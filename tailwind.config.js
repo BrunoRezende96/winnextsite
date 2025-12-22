@@ -19,6 +19,7 @@ export default {
       },
 
       screens: {
+        md2: {min: "810px", max: "1023px"},
         mid: { min: "450px", max: "700px" },   // seu breakpoint personalizado
       },
 
