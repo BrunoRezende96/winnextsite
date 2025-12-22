@@ -9,16 +9,46 @@ export default function Home() {
                 <div className="w-full" >
                     <Slider />
                     <div className="w-full relative top-[-50px] flex justify-center">
-                        <Cards/>
+                        <Cards />
                     </div>
                 </div>
             </div>
+
+            {/*About Us*/}
+            <section
+                id="about"
+                className="scroll-mt-14 w-full h-auto flex flex-col items-center pt-12"
+            >
+                {/* Container do Título*/}
+                <div className="container w-full flex flex-col items-center">
+
+                    {/* Title & subtitle */}
+                    <div className="w-[80%] flex flex-col items-center text-center">
+                        <h3 className="text-bgSecundary text-xl" >Companies trust us</h3>
+                        <h2 className="text-[#114172] font-semibold text-4xl" >We can help you hit your target.</h2>
+                    </div>
+
+                </div>
+
+                {/*Container do vídeo e do texto*/}
+                <div className="container">
+                    
+                
+
+
+                </div>
+
+            </section>
+
+
+
+
             <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>
             <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>{
 
             }
 
-            
+
 
 
             <div className="bg-cyan-600 h-44 flex items-center justify-center px-8">
@@ -28,6 +58,7 @@ export default function Home() {
             <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>
             <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>
             <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>
+            <section id="contact"></section>
         </div>
     )
 }

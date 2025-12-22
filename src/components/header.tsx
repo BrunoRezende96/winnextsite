@@ -1,62 +1,89 @@
-
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import NavMobile from "../models/navMobile";
 
-
 export default function Header() {
+  const [menu, setMenu] = useState(NavMobile.fechada());
+  const location = useLocation();
+  const navigate = useNavigate();
 
-    const [menu, setMenu] = useState(NavMobile.fechada())
+  function toggleMenu(): void {
+    setMenu(menu.aberto ? NavMobile.fechada() : NavMobile.aberta());
+  }
 
-    function toggleMenu() {
-        setMenu(menu.aberto ? NavMobile.fechada() : NavMobile.aberta())
+  function handleScroll(id: string): void {
+    // HOME → TOPO DO SITE
+    if (id === "top") {
+      if (location.pathname !== "/") {
+        navigate("/");
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
     }
 
-    return (
-        <div className="sticky top-0 z-50 h-14 bg-bgPrimary flex justify-center items-center" >
-            <header className="container flex justify-between items-center DPad" >
+    // DEMAIS SEÇÕES
+    if (location.pathname === "/") {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    } else {
+      navigate("/", { state: { scrollTo: id } });
+    }
+  }
 
-                <div className="logo w-[150px] cursor-pointer hover:scale-[1.05] duration-300 transition-all" >
-                    <Link to="/">
-                        <img src="winnextLogo.png" alt="logo" />
-                    </Link>
-                </div>
+  return (
+    <div className="sticky top-0 z-50 h-auto bg-bgPrimary flex justify-center items-center">
+      <header className="container flex justify-between items-center DPad">
 
+        {/* LOGO */}
+        <div className="logo w-[120px] cursor-pointer hover:scale-[1.05] duration-300 transition-all">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            <img src="winnextLogo.png" alt="logo" />
+          </Link>
+        </div>
 
-                <nav className="w-[75%] relative items-center md:p-0 hidden bg-orange-400 lg:flex" >
-                    <div className="text-white gap-6 h-6 hidden md:flex absolute" >
-                        <Link to="/" className="hover:border-b hover:border-b-bgThird " >Home</Link>
-                        <Link to="/about-us" className="hover:border-b hover:border-b-bgThird " >About Us</Link>
-                        <Link to="/services" className="hover:border-b hover:border-b-bgThird " >Services</Link>
-                        <Link to="/how-we-work" className="hover:border-b hover:border-b-bgThird  ">How We Work</Link>
-                        <Link to="/portfolio" className="hover:border-b hover:border-b-bgThird " >Portfolio</Link>
-                        <Link to="/contact-us" className="hover:border-b hover:border-b-bgThird " >Contact Us</Link>
-                    </div>
-                </nav>
+        {/* NAV DESKTOP */}
+        <nav className="w-[75%] relative items-center hidden lg:flex">
+          <div className="text-white gap-6 h-6 flex absolute">
+            <button className="hover:border-b-[1px] border-bgSecundary" onClick={() => handleScroll("top")}>Home</button>
+            <button className="hover:border-b-[1px] border-bgSecundary" onClick={() => handleScroll("about")}>About Us</button>
+            <button className="hover:border-b-[1px] border-bgSecundary" onClick={() => handleScroll("services")}>Services</button>
+            <button className="hover:border-b-[1px] border-bgSecundary" onClick={() => handleScroll("how")}>How We Work</button>
+            <button className="hover:border-b-[1px] border-bgSecundary" onClick={() => handleScroll("portfolio")}>Portfolio</button>
+            <button className="hover:border-b-[1px] border-bgSecundary" onClick={() => handleScroll("contact")}>Contact Us</button>
+          </div>
+        </nav>
 
-                <div className="cursor-pointer lg:hidden ml-3" onClick={toggleMenu} >
-                    {menu.icon}
-                </div>
+        {/* BOTÃO MOBILE */}
+        <div className="cursor-pointer lg:hidden ml-3" onClick={toggleMenu}>
+          {menu.icon}
+        </div>
 
-                {/* Navbar Lateral Mobile */}
-                <aside
-                    className={`
+        {/* NAV MOBILE */}
+        <aside
+          className={`
             fixed top-14 right-0 h-full w-[40%] bg-bgSecundary text-white 
             flex flex-col items-center justify-center gap-12 
             transition-transform duration-500 ease-in-out
             ${menu.aberto ? "translate-x-0" : "translate-x-full"}
           `}
-                >
-                    <Link to="/" onClick={toggleMenu}>Home</Link>
-                    <Link to="/about-us" onClick={toggleMenu}>About Us</Link>
-                    <Link to="/services" onClick={toggleMenu}>Services</Link>
-                    <Link to="/how-we-work" onClick={toggleMenu}>How We Work</Link>
-                    <Link to="/portfolio" onClick={toggleMenu}>Portfolio</Link>
-                    <Link to="/contact-us" onClick={toggleMenu}>Contact Us</Link>
-                </aside>
+        >
+          <button onClick={() => { handleScroll("top"); toggleMenu(); }}>Home</button>
+          <button onClick={() => { handleScroll("about"); toggleMenu(); }}>About Us</button>
+          <button onClick={() => { handleScroll("services"); toggleMenu(); }}>Services</button>
+          <button onClick={() => { handleScroll("how"); toggleMenu(); }}>How We Work</button>
+          <button onClick={() => { handleScroll("portfolio"); toggleMenu(); }}>Portfolio</button>
+          <button onClick={() => { handleScroll("contact"); toggleMenu(); }}>Contact Us</button>
+        </aside>
 
-
-            </header>
-        </div>
-    )
+      </header>
+    </div>
+  );
 }
