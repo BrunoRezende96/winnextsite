@@ -48,23 +48,26 @@ export default function Home() {
 
                     {/*Vídeo*/}
                     <div className="w-full flex relative justify-center items-cente py-5">
-                        
-                        <video
-                            src="/institucionalWinnextCompany.mp4"
-                            className="
-                            shadow-sm
+
+                        <div className="w-auto h-auto shadow-sm shadow-zinc-700 rounded-md">
+                            <video
+                                src="/institucionalWinnextCompany.mp4"
+                                className="
                             w-[280px]
                             h-[160px]
 
                             lg:w-[380px]
                             lg:h-[215px]
+                            lg:shadow-md
+
 
                             rounded-md
                             bg-bgPrimary
                             "
-                            controls
-                        >
-                        </video>
+                                controls
+                            >
+                            </video>
+                        </div>
 
                         {/*Overlay*/}
                         <div className="absolute w-[300px] bottom-[-20px] rounded-md px-5 h-36  z-[-1] shadow-md
