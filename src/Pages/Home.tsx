@@ -8,7 +8,7 @@ export default function Home() {
             <div className="flex w-full items-center justify-center flex-col" >
                 <div className="w-full" >
                     <Slider />
-                    <div className="w-full relative top-[-50px] ">
+                    <div className="w-full relative top-[-50px] flex justify-center">
                         <Cards/>
                     </div>
                 </div>

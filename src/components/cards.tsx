@@ -32,7 +32,7 @@ export default function Cards() {
   };
 
   return (
-    <div className="container px-[10%] flex w-full h-auto">
+    <div className="container px-[10%] flex w-full h-auto z-10  ">
       <motion.div
         className="
           w-full h-auto flex flex-col gap-4 items-center
@@ -42,13 +42,16 @@ export default function Cards() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
+
       >
         {/* Card 1 */}
         <motion.div
           variants={cardVariants}
           className="
             w-[80%] h-auto shadow-md overflow-hidden bg-slate-50
-            rounded-md p-4 flex flex-col gap-2
+            rounded-md p-4 flex flex-col gap-2 cursor-pointer
+
+
             sm:relative sm:top-[-50px]
           "
         >
@@ -68,7 +71,7 @@ export default function Cards() {
         {/* Card 2 */}
         <motion.div
           variants={cardVariants}
-          className="w-[80%] h-auto shadow-md overflow-hidden bg-slate-50 rounded-md p-4 flex flex-col gap-2"
+          className="w-[80%] h-auto shadow-md overflow-hidden bg-slate-50 rounded-md p-4 flex flex-col gap-2 cursor-pointer"
         >
           <div className="w-full flex justify-center">
             <PiCubeTransparentLight color="#0098c0" size={40} />
@@ -87,7 +90,7 @@ export default function Cards() {
         <motion.div
           variants={cardVariants}
           className="
-            w-[80%] h-auto shadow-md overflow-hidden bg-slate-50
+            w-[80%] h-auto shadow-md overflow-hidden bg-slate-50 cursor-pointer
             rounded-md p-4 flex flex-col gap-2
             sm:relative sm:top-[-50px]
           "
@@ -108,7 +111,7 @@ export default function Cards() {
         {/* Card 4 */}
         <motion.div
           variants={cardVariants}
-          className="w-[80%] h-auto shadow-md overflow-hidden bg-slate-50 rounded-md p-4 flex flex-col gap-2"
+          className="w-[80%] h-auto shadow-md overflow-hidden bg-slate-50 rounded-md p-4 flex flex-col gap-2 cursor-pointer"
         >
           <div className="w-full flex justify-center">
             <IoDiamondOutline color="#0098c0" size={30} />
