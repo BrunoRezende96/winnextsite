@@ -25,12 +25,19 @@ export default function Home() {
                     {/* Title & subtitle */}
                     <div className="w-[80%] flex flex-col items-center text-center
                     md:w-[60%]
+                    xl:w-[50%]
                     
                     ">
-                        <h3 className="text-bgSecundary text-sm" >Um pouquinho sobre nós</h3>
+                        <h3 className="text-bgSecundary text-sm
+                        
+                        lg:text-lg
+
+                        " >Um pouquinho sobre nós</h3>
                         <h2 className="text-[#114172] font-semibold text-2xl 
                         
                         lg:mb-20
+                        lg:text-4xl
+
                         
                         " >Como podemos ajudar você a alcançar seus objetivos</h2>
                     </div>
@@ -110,7 +117,7 @@ export default function Home() {
 
 
                     " >
-                        <strong>Na Winnext, as empresas confiam em nós</strong> porque transformamos compromisso em resultados.
+                        <strong>As empresas confiam na Winnext</strong> porque transformamos compromisso em resultados.
                         Entendemos que cada negócio tem objetivos únicos e nossa missão é ajudá-lo a atingir sua meta com precisão e confiança. Combinando experiência, inovação e dedicação, capacitamos nossos parceiros a crescerem e irem mais longe.
 
                         Com a Winnext ao seu lado, o sucesso não é apenas uma possibilidade — é o resultado.
