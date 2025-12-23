@@ -3,6 +3,8 @@ import Slider from "../components/slides"
 import About from "../sections/About"
 import WinnextButton from "../components/winnextButton"
 import BannerSlider from "../components/BannerSlider"
+import { useState, useEffect } from "react"
+import BannerSliderMobile from "../components/BannerSliderMobile"
 
 
 
@@ -11,6 +13,20 @@ import BannerSlider from "../components/BannerSlider"
 
 
 export default function Home() {
+
+
+
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        function handleResize() {
+            setIsMobile(window.innerWidth < 421)
+
+        } handleResize()
+
+        window.addEventListener("resize", handleResize)
+    }, [])
+
     return (
         <div className="top-0 flex flex-col justify-center w-full">
             <div className="flex w-full items-center justify-center flex-col" >
@@ -23,10 +39,11 @@ export default function Home() {
             </div>
 
             {/*About Us*/}
-            <About/>
+            <About />
 
+            {/*Banner*/}
             <div className="w-full flex justify-center py-36">
-                <BannerSlider/>
+                {isMobile? <BannerSliderMobile/> : <BannerSlider/>}
             </div>
 
 
