@@ -5,6 +5,7 @@ import WinnextButton from "../components/winnextButton"
 import BannerSlider from "../components/BannerSlider"
 import { useState, useEffect } from "react"
 import BannerSliderMobile from "../components/BannerSliderMobile"
+import Reviews from '../sections/Reviews'
 
 
 
@@ -44,6 +45,12 @@ export default function Home() {
             {/*Banner*/}
             <div className="w-full flex justify-center py-36">
                 {isMobile? <BannerSliderMobile/> : <BannerSlider/>}
+            </div>
+
+
+            {/*Reviwes*/}
+            <div>
+                <Reviews/>
             </div>
 
 
