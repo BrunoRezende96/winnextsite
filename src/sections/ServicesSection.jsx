@@ -16,7 +16,7 @@ import {
 
 
 
-const Click = [clicked, setClicked] = useState(false);
+// const Click = [clicked, setClicked] = useState(false);
 
 
 const services = [
@@ -179,7 +179,7 @@ export default function WinnextServices() {
                 {/* EM BREVE */}
                 {service.soon && (
                   <div className="absolute top-0 right-0 z-20">
-                    <div className="bg-green-900 text-white text-xs font-bold px-4 py-2 rounded-bl-xl tracking-wide">
+                    <div className="bg-slate-500 text-white text-xs font-bold px-4 py-2 rounded-bl-xl tracking-wide">
                       EM BREVE
                     </div>
                   </div>
@@ -233,7 +233,7 @@ export default function WinnextServices() {
 
                   {/* CTA */}
                   <button
-                  onClick={()=> (setClicked(true))}
+                  // onClick={()=> (setClicked(true))}
                     className={`
                       mt-8
                       w-full

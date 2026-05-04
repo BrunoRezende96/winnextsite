@@ -1,7 +1,6 @@
 import Cards from "../components/cards"
 import Slider from "../components/slides"
 import About from "../sections/About"
-import WinnextButton from "../components/winnextButton"
 import BannerSlider from "../components/BannerSlider"
 import { useState, useEffect } from "react"
 import BannerSliderMobile from "../components/BannerSliderMobile"
@@ -55,16 +54,6 @@ export default function Home() {
 
             <ServicesSection/>  
 
-
-
-
-            <div className="bg-cyan-600 h-44 flex items-center justify-center px-8">
-                <WinnextButton buttonType="large" />
-            </div>
-
-            <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>
-            <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>
-            <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>
             <section id="contact"></section>
         </div>
     )
