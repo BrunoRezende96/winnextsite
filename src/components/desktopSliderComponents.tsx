@@ -19,11 +19,12 @@ export default function DesktopSliderComponents() {
                     " >
 
                     <div className="pl-8 w-full h-auto flex justify-start">
-                        <h1 className=" w-[50%] text-white font-semibold text-start text-5xl
+                        <h1 className=" w-[50%] leading-normal text-white font-semibold text-start text-5xl
                         
-                        md:w-[40%]
+                        md:w-[60%]
                         md:top-8
                         md:relative
+                        md:leading-none
 
                         lg:text-7xl
 
@@ -31,7 +32,7 @@ export default function DesktopSliderComponents() {
                         xl:text-8xl
                         
                         ">
-                            Go to your next win
+                            Rumo a sua próxima conquista
                         </h1>
                     </div>
 

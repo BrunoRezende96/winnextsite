@@ -6,7 +6,7 @@ import BannerSlider from "../components/BannerSlider"
 import { useState, useEffect } from "react"
 import BannerSliderMobile from "../components/BannerSliderMobile"
 import Reviews from '../sections/Reviews'
-
+import ServicesSection from "../sections/ServicesSection"
 
 
 
@@ -53,11 +53,7 @@ export default function Home() {
                 <Reviews/>
             </div>
 
-
-            <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>
-            <div className="bg-lime-300 h-80 mt-12 mb-12" >Teste</div>{
-
-            }p
+            <ServicesSection/>  
 
 
 
