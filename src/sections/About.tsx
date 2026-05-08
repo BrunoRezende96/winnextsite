@@ -45,7 +45,7 @@ export default function About() {
                         mb-24
                         "
                         >
-                            Veja como podemos ajudar você a alcançar seus objetivos
+                            Como podemos ajudar você a alcançar seus objetivos
                         </h2>
 
                         {/* <p
