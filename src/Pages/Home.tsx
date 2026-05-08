@@ -6,6 +6,7 @@ import { useState, useEffect } from "react"
 import BannerSliderMobile from "../components/BannerSliderMobile"
 import Reviews from '../sections/Reviews'
 import ServicesSection from "../sections/ServicesSection"
+import HeroSection from "../sections/HeroSection"
 
 
 
@@ -31,7 +32,8 @@ export default function Home() {
         <div className="top-0 flex flex-col justify-center w-full">
             <div className="flex w-full items-center justify-center flex-col" >
                 <div className="w-full" >
-                    <Slider />
+                    {/* <Slider /> */}
+                    <HeroSection />
                     <div className="w-full relative top-[-50px] flex justify-center">
                         <Cards />
                     </div>

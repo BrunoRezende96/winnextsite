@@ -18,23 +18,47 @@ export default function About() {
                 <div className="container w-full flex flex-col items-center">
 
                     {/* Title & subtitle */}
-                    <div className="w-[80%] flex flex-col items-center text-center
+                    <div
+                        className="
+                        w-[80%]
+                        flex
+                        flex-col
+                        items-center
+                        text-center
+
                         md:w-[60%]
                         xl:w-[50%]
-                        
-                        ">
-                        <h3 className="text-bgSecundary text-sm
-                            
-                            lg:text-lg
-    
-                            " >Um pouquinho sobre nós</h3>
-                        <h2 className="text-[#114172] font-semibold text-2xl 
-                            
-                            lg:mb-20
-                            lg:text-4xl
-    
-                            
-                            " >Como podemos ajudar você a alcançar seus objetivos</h2>
+                    "
+                    >
+                        <span className="text-[#32c685] font-bold uppercase tracking-[4px]">
+                            Winnext Company
+                        </span>
+
+                        <h2
+                        className="
+                        text-[#0098c0]
+                        font-black
+                        text-4xl
+                        md:text-5xl
+                        mt-4
+                        leading-tight
+                        mb-24
+                        "
+                        >
+                            Veja como podemos ajudar você a alcançar seus objetivos
+                        </h2>
+
+                        {/* <p
+                        className="
+                        text-gray-600
+                        mt-5
+                        text-lg
+                        leading-relaxed
+                        "
+                        >
+                            Tecnologia, automação e estratégias digitais criadas para
+                            impulsionar empresas modernas rumo ao próximo nível.
+                        </p> */}
                     </div>
 
                 </div>
