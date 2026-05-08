@@ -20,7 +20,7 @@ const plans = [
   },
   {
     name: "Essential",
-    price: "R$1.100",
+    price: "R$1.350",
     period: "/mês",
     description:
       "Perfeito para empresas que querem unir anúncios pagos e posicionamento nas redes sociais.",
@@ -33,8 +33,8 @@ const plans = [
     featured: true,
   },
   {
-    name: "PlusWin",
-    price: "R$1.600",
+    name: "Full Win",
+    price: "R$1.800",
     period: "/mês",
     description:
       "A solução completa da Winnext para acelerar resultados e fortalecer sua marca.",
