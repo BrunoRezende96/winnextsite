@@ -1,144 +1,206 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 
 const Reviews: React.FC = () => {
   const reviews = [
     {
       id: 1,
-      name: 'Maria Silva',
+      name: "Maria Silva",
       rating: 5,
-      comment: 'Excelente trabalho! A equipe da Prinos superou todas as minhas expectativas. Minha cozinha ficou perfeita!',
-      date: '2 anos atrás'
+      comment:
+        "Excelente trabalho! A equipe da Winnext superou todas as expectativas da nossa empresa.",
+      date: "2 meses atrás",
     },
     {
       id: 2,
-      name: 'João Santos',
+      name: "João Santos",
       rating: 5,
-      comment: 'Profissionais muito competentes e pontuais. O projeto do meu home office ficou incrível. Recomendo!',
-      date: '1 mês atrás'
+      comment:
+        "Profissionais extremamente competentes. Nosso tráfego pago teve um crescimento impressionante.",
+      date: "1 mês atrás",
     },
     {
       id: 3,
-      name: 'Ana Costa',
+      name: "Ana Costa",
       rating: 5,
-      comment: 'Qualidade excepcional e atendimento personalizado. Transformaram completamente nosso quarto. Muito satisfeita!',
-      date: '2 semanas atrás'
+      comment:
+        "O atendimento foi impecável e o desenvolvimento da landing page ficou incrível.",
+      date: "3 semanas atrás",
     },
     {
       id: 4,
-      name: 'Carlos Oliveira',
+      name: "Carlos Oliveira",
       rating: 5,
-      comment: 'Empresa séria e confiável. Cumpriram todos os prazos e o resultado final foi além do esperado.',
-      date: '10 anos atrás'
+      comment:
+        "Empresa séria, organizada e muito profissional. Recomendo fortemente.",
+      date: "4 meses atrás",
     },
     {
       id: 5,
-      name: 'Fernanda Lima',
+      name: "Fernanda Lima",
       rating: 5,
-      comment: 'Adorei o projeto da sala de estar. Equipe muito profissional e materiais de primeira qualidade.',
-      date: '7 meses atrás'
+      comment:
+        "A automação para WhatsApp facilitou completamente nosso atendimento.",
+      date: "5 meses atrás",
     },
     {
       id: 6,
-      name: 'Roberto Mendes',
+      name: "Roberto Mendes",
       rating: 5,
-      comment: 'Excelente custo-benefício. A marcenaria ficou perfeita e o atendimento foi impecável do início ao fim.',
-      date: '3 anos atrás'
-    }
+      comment:
+        "Equipe altamente qualificada. O projeto foi entregue acima do esperado.",
+      date: "1 ano atrás",
+    },
   ];
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star
         key={index}
-        className={`w-5 h-5 ${index < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
-          }`}
+        className={`w-5 h-5 ${
+          index < rating
+            ? "text-[#32c685] fill-[#32c685]"
+            : "text-gray-300"
+        }`}
       />
     ));
   };
 
   return (
+    <section className="py-24 bg-white px-6 md:px-[8%] overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <span className="text-[#32c685] font-bold uppercase tracking-[4px]">
+            Winnext Company
+          </span>
 
-    <div>
+          <h2 className="text-4xl md:text-5xl font-black text-[#0098c0] mt-4">
+            O que nossos clientes dizem
+          </h2>
 
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mt-5 leading-relaxed">
+            A satisfação dos nossos clientes é o que impulsiona a Winnext
+            Company a entregar soluções modernas, inteligentes e eficientes.
+          </p>
+        </motion.div>
 
-      <section className="py-20 bg-gray-50 px-[12%]">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-4xl font-semibold text-[#114172] mb-2">
-              O que nossos <span className="text-bgSecundary">clientes dizem</span>
-            </h2>
-            <p className="text-lg text-gray-700 max-w-1xl mx-auto w-[50%]">
-              A satisfação dos nossos clientes é nossa maior conquista. Veja alguns depoimentos de quem confiou na Winnext.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {reviews.map((review, index) => (
-              <motion.div
-                key={review.id}
-                className="bg-white p-6 rounded-lg shadow-lg"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="flex items-center mb-4">
-                  <div className="flex mr-2">
-                    {renderStars(review.rating)}
-                  </div>
-                  <span className="text-sm text-gray-500">{review.date}</span>
+        {/* Reviews Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {reviews.map((review, index) => (
+            <motion.div
+              key={review.id}
+              className="
+                group
+                bg-[#eef4f8]
+                border
+                border-gray-200
+                rounded-3xl
+                p-8
+                transition-all
+                duration-300
+                hover:-translate-y-2
+                hover:shadow-2xl
+                hover:border-[#0098c0]
+              "
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: index * 0.1,
+              }}
+              viewport={{ once: true }}
+            >
+              {/* Stars */}
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex gap-1">
+                  {renderStars(review.rating)}
                 </div>
 
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  "{review.comment}"
-                </p>
-
-                <div className="flex items-center">
-                  <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white font-semibold mr-3">
-                    {review.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{review.name}</h4>
-                    <p className="text-sm text-gray-500">Cliente verificado</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center bg-white px-6 py-3 rounded-lg shadow-lg">
-              <div className="flex mr-3">
-                {renderStars(5)}
+                <span className="text-sm text-gray-500">
+                  {review.date}
+                </span>
               </div>
-              <span className="text-lg font-semibold text-gray-900">
-                4.9/5 - Baseado em 150+ avaliações
-              </span>
-            </div>
-          </motion.div>
+
+              {/* Comment */}
+              <p className="text-gray-700 leading-relaxed mb-8">
+                "{review.comment}"
+              </p>
+
+              {/* User */}
+              <div className="flex items-center">
+                <div
+                  className="
+                    w-12
+                    h-12
+                    rounded-full
+                    bg-[#0098c0]
+                    text-white
+                    flex
+                    items-center
+                    justify-center
+                    font-bold
+                    text-lg
+                    mr-4
+                  "
+                >
+                  {review.name.charAt(0)}
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-gray-900">
+                    {review.name}
+                  </h4>
+
+                  <p className="text-sm text-[#32c685] font-medium">
+                    Cliente verificado
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
 
+        {/* Rating Summary */}
+        <motion.div
+          className="flex justify-center mt-16"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          <div
+            className="
+              bg-[#eef4f8]
+              border
+              border-[#0098c0]/20
+              rounded-2xl
+              px-8
+              py-5
+              shadow-lg
+              flex
+              items-center
+              gap-4
+            "
+          >
+            <div className="flex gap-1">
+              {renderStars(5)}
+            </div>
 
-
-    </div>
-
-
+            <span className="text-lg font-bold text-[#0098c0]">
+              4.9/5 • Baseado em avaliações reais
+            </span>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

@@ -1,96 +1,228 @@
-import { Car, Mail, Phone } from "lucide-react";
+import {
+  MonitorSmartphone,
+  Mail,
+  Phone,
+  Instagram,
+  Facebook,
+  Linkedin,
+} from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-bgPrimary border-t border-none text-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-
-        {/* Grid 4 colunas */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-
-          {/* Coluna 1 - Marca */}
+    <footer className="bg-[#0098c0] text-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20">
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-12">
+          {/* Marca */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-white rounded flex items-center justify-center">
-                <Car size={18} className="text-black" />
+            <div className="flex items-center gap-3 mb-6">
+              <div
+                className="
+                  w-12
+                  h-12
+                  rounded-2xl
+                  bg-white
+                  flex
+                  items-center
+                  justify-center
+                  shadow-lg
+                "
+              >
+                <MonitorSmartphone
+                  size={24}
+                  className="text-[#0098c0]"
+                />
               </div>
 
-              <span className="font-bold text-xl">
-                Auto<span className="text-[#8B0000]">Drive</span>
-              </span>
+              <div>
+                <h3 className="text-2xl font-black">
+                  Winnext
+                </h3>
+
+                <span className="text-[#32c685] font-semibold text-sm tracking-wide">
+                  COMPANY
+                </span>
+              </div>
             </div>
 
-            <p className="text-white text-sm leading-relaxed">
-              A empresa número 1 em soluções de alta performance, conectando empresas e clientes com tecnologia e eficiência.
+            <p className="text-white/80 leading-relaxed">
+              Soluções modernas em tecnologia, automação, marketing
+              digital e desenvolvimento para empresas que desejam crescer.
             </p>
           </div>
 
-          {/* Coluna 2 - Planos */}
+          {/* Serviços */}
           <div>
-            <h4 className="font-bold mb-4 text-white">Planos</h4>
+            <h4 className="font-bold text-xl mb-6">
+              Serviços
+            </h4>
 
-            <ul className="space-y-2 text-sm text-white">
-              <li className="hover:text-white cursor-pointer">Starter</li>
-              <li className="hover:text-white cursor-pointer">Básico</li>
-              <li className="hover:text-white cursor-pointer">Amigo</li>
-              <li className="hover:text-red-500 cursor-pointer">Super Amigo</li>
-              <li className="hover:text-white cursor-pointer">Parceiro</li>
-              <li className="hover:text-white cursor-pointer">VIP</li>
-              <li className="hover:text-white cursor-pointer">Agência</li>
+            <ul className="space-y-3 text-white/80">
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                Google Ads
+              </li>
+
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                Meta Ads
+              </li>
+
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                Landing Pages
+              </li>
+
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                E-commerce
+              </li>
+
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                Automação WhatsApp
+              </li>
+
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                Gestão de Redes Sociais
+              </li>
             </ul>
           </div>
 
-          {/* Coluna 3 - Empresa */}
+          {/* Empresa */}
           <div>
-            <h4 className="font-bold mb-4 text-white">Empresa</h4>
+            <h4 className="font-bold text-xl mb-6">
+              Empresa
+            </h4>
 
-            <ul className="space-y-2 text-sm text-white">
-              <li className="hover:text-white cursor-pointer">Sobre nós</li>
-              <li className="hover:text-white cursor-pointer">Como funciona</li>
-              <li className="hover:text-white cursor-pointer">Depoimentos</li>
-              <li className="hover:text-white cursor-pointer">Contato</li>
+            <ul className="space-y-3 text-white/80">
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                Sobre Nós
+              </li>
+
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                Soluções
+              </li>
+
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                Depoimentos
+              </li>
+
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                FAQ
+              </li>
+
+              <li className="hover:text-[#32c685] transition cursor-pointer">
+                Contato
+              </li>
             </ul>
           </div>
 
-          {/* Coluna 4 - Contato */}
+          {/* Contato */}
           <div>
-            <h4 className="font-bold mb-4 text-white">Contato</h4>
+            <h4 className="font-bold text-xl mb-6">
+              Contato
+            </h4>
 
-            <div className="space-y-3 text-sm text-white">
-              <div className="flex items-center gap-2">
-                <Mail size={16} className="text-white" />
-                suporte@autodrive.com
+            <div className="space-y-4 text-white/80">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                  <Mail size={18} className="text-[#32c685]" />
+                </div>
+
+                <span>contato@winnextcompany.com</span>
               </div>
 
-              <div className="flex items-center gap-2">
-                <Phone size={16} className="text-white" />
-                (11) 9 8710-3956
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                  <Phone size={18} className="text-[#32c685]" />
+                </div>
+
+                <span>(11) 9 8710-3956</span>
               </div>
             </div>
 
-            {/* Redes sociais (seguro, sem lucide) */}
-            <div className="flex gap-4 mt-6 text-lg">
-              <span className="cursor-pointer hover:text-red-500 transition">
-                📸
-              </span>
-              <span className="cursor-pointer hover:text-red-500 transition">
-                📘
-              </span>
-              <span className="cursor-pointer hover:text-red-500 transition">
-                🐦
-              </span>
+            {/* Social */}
+            <div className="flex gap-4 mt-8">
+              <button
+                className="
+                  w-11
+                  h-11
+                  rounded-full
+                  bg-white/10
+                  flex
+                  items-center
+                  justify-center
+                  hover:bg-[#32c685]
+                  transition-all
+                  duration-300
+                  hover:scale-110
+                "
+              >
+                <Instagram size={18} />
+              </button>
+
+              <button
+                className="
+                  w-11
+                  h-11
+                  rounded-full
+                  bg-white/10
+                  flex
+                  items-center
+                  justify-center
+                  hover:bg-[#32c685]
+                  transition-all
+                  duration-300
+                  hover:scale-110
+                "
+              >
+                <Facebook size={18} />
+              </button>
+
+              <button
+                className="
+                  w-11
+                  h-11
+                  rounded-full
+                  bg-white/10
+                  flex
+                  items-center
+                  justify-center
+                  hover:bg-[#32c685]
+                  transition-all
+                  duration-300
+                  hover:scale-110
+                "
+              >
+                <Linkedin size={18} />
+              </button>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 border-t border-white pt-6 flex flex-col md:flex-row justify-center items-center text-xs 11 98710-3956 gap-4">
-          <p> Orgulhosamente desenvolvido por Winnext Company© 2023. Todos os direitos reservados.</p>
+        <div
+          className="
+            mt-16
+            pt-8
+            border-t
+            border-white/20
+            flex
+            flex-col
+            md:flex-row
+            items-center
+            justify-between
+            gap-4
+          "
+        >
+          <p className="text-white/70 text-sm text-center md:text-left">
+            © 2025 Winnext Company. Todos os direitos reservados.
+          </p>
+
+          <p className="text-[#32c685] text-sm font-medium">
+            Desenvolvido pela Winnext Company
+          </p>
         </div>
       </div>
 
-      {/* Linha vermelha glow */}
-      <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-[#8B0000] to-transparent shadow-[0_0_10px_rgba(139,0,0,0.8)]" />
+      {/* Linha decorativa */}
+      <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-[#32c685] to-transparent opacity-80" />
     </footer>
   );
 }
