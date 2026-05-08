@@ -6,6 +6,7 @@ import WhatsAppWidget from "./components/WhatsAppWidget";
 import { Footer } from "./components/Footer";
 import { FAQSection } from "./sections/FAQSection";
 import Plans from "./sections/Plans";
+import CTAQuestions from "./sections/CTAQuestions";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
 
       <WhatsAppWidget/>
       <Plans/ >
+      <CTAQuestions/>
       <PrivacyWidget/>
       <FAQSection/>
       <Footer />
