@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import WinnextButton from "../components/winnextButton";
 
 const slides = [
   {
@@ -8,7 +9,7 @@ const slides = [
     description:
       "Soluções modernas em marketing, tecnologia e automação para acelerar resultados empresariais.",
     image:
-      "https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop",
+      "../src/assets/HomeSlide1.png",
   },
   {
     title: "Tecnologia que impulsiona empresas",
@@ -71,19 +72,7 @@ export default function HeroSlider() {
               "
             />
 
-            {/* Decorative Shape */}
-            <div
-              className="
-                absolute
-                top-0
-                right-0
-                w-[55%]
-                h-full
-                bg-white
-                opacity-10
-                clip-path-slant
-              "
-            />
+
           </div>
 
           {/* Content */}
@@ -151,47 +140,8 @@ export default function HeroSlider() {
               </p>
 
               {/* CTA */}
-              <div className="mt-10 flex flex-wrap gap-5">
-                <button
-                  className="
-                    group
-                    flex
-                    items-center
-                    gap-4
-                    rounded-full
-                    border
-                    border-white
-                    bg-white
-                    px-8
-                    py-4
-                    text-[#0098c0]
-                    font-bold
-                    shadow-2xl
-                    transition-all
-                    duration-300
-                    hover:scale-105
-                  "
-                >
-                  <span
-                    className="
-                      flex
-                      items-center
-                      justify-center
-                      w-10
-                      h-10
-                      rounded-full
-                      bg-[#32c685]
-                      text-white
-                      text-xl
-                      transition-all
-                      duration-300
-                    "
-                  >
-                    →
-                  </span>
-
-                  SOLICITAR CONSULTORIA
-                </button>
+              <div className="mt-10 flex flex-wrap gap-5 h-auto w-auto">
+                <WinnextButton buttonType="small" />
               </div>
             </div>
           </div>

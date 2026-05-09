@@ -6,8 +6,8 @@ const WhatsAppWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent('Olá, estou vindo do seu site e gostaria de um orçamento');
-    window.open(`https://wa.me/5511934708733?text=${message}`, '_blank');
+    const message = encodeURIComponent('Olá, estou vindo do seu site e gostaria de saber mais sobre seus serviços e soluções digitais!');
+    window.open(`https://wa.me/5511987103956?text=${message}`, '_blank');
   };
 
   return (
