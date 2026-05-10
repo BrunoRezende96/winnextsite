@@ -9,7 +9,7 @@ const slides = [
     description:
       "Soluções modernas em marketing, tecnologia e automação para acelerar resultados empresariais.",
     image:
-      "../src/assets/HomeSlide1.png",
+      "HomeSlide1.png",
   },
   {
     title: "Tecnologia que impulsiona empresas",
