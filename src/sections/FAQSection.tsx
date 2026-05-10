@@ -201,8 +201,6 @@ export function FAQSection() {
         </div>
       </div>
 
-      {/* Linha decorativa */}
-      <div className="mt-20 w-full h-[2px] bg-gradient-to-r from-transparent via-[#0098c0] to-transparent opacity-60" />
     </section>
   );
 }

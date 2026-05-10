@@ -46,10 +46,9 @@ export default function HeroSlider() {
           key={index}
           className={`
             absolute inset-0 transition-all duration-1000
-            ${
-              current === index
-                ? "opacity-100 scale-100 z-10"
-                : "opacity-0 scale-105 z-0"
+            ${current === index
+              ? "opacity-100 scale-100 z-10"
+              : "opacity-0 scale-105 z-0"
             }
           `}
         >
@@ -167,10 +166,9 @@ export default function HeroSlider() {
               rounded-full
               transition-all
               duration-500
-              ${
-                current === index
-                  ? "w-14 h-3 bg-white"
-                  : "w-3 h-3 bg-white/50"
+              ${current === index
+                ? "w-14 h-3 bg-white"
+                : "w-3 h-3 bg-white/50"
               }
             `}
           />
@@ -182,10 +180,10 @@ export default function HeroSlider() {
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#32c685]/20 blur-3xl rounded-full z-0" />
 
       {/* Custom Shape */}
-      <style jsx>{`
-        .clip-path-slant {
-          clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
+      <style>{`
+          .clip-path-slant {
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+          }
       `}</style>
     </section>
   );

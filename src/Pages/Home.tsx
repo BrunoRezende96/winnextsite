@@ -1,5 +1,4 @@
 import Cards from "../components/cards"
-import Slider from "../components/slides"
 import About from "../sections/About"
 import BannerSlider from "../components/BannerSlider"
 import { useState, useEffect } from "react"
